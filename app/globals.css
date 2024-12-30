@@ -5,6 +5,16 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+/* body {
+  background-color: #050a1c;
+  background-image: radial-gradient(
+      at 47% 33%,
+      hsl(222, 67%, 15%) 0,
+      transparent 59%
+    ),
+    radial-gradient(at 82% 65%, hsl(218, 39%, 11%) 0, transparent 55%);
+  cursor: none;
+} */
 
 @layer utilities {
   .text-balance {
@@ -76,3 +86,71 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.glassmorphism {
+  background: rgba(10, 22, 53, 0.3);
+  backdrop-filter: blur(4px);
+  border-radius: 5px;
+  border: 1px solid rgba(13, 75, 245, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(66, 153, 225, 0.2);
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px #3b82f6, 0 0 10px #3b82f6, 0 0 15px #3b82f6,
+      0 0 20px #3b82f6;
+  }
+  100% {
+    box-shadow: 0 0 10px #3b82f6, 0 0 20px #3b82f6, 0 0 30px #3b82f6,
+      0 0 40px #3b82f6;
+  }
+}
+
+.glow-effect {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+/* .tracer {
+  pointer-events: none;
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #3b82f6;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.15s ease;
+  z-index: 9999;
+} */
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+* {
+  cursor: none;
+}
+
+a,
+button,
+input {
+  cursor: none;
+}
+
+/* a:hover ~ .tracer,
+button:hover ~ .tracer,
+input:hover ~ .tracer {
+  width: 40px;
+  height: 40px;
+  border-width: 3px;
+} */
